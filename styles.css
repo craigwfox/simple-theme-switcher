@@ -1,4 +1,4 @@
-button[is="theme-switcher"] {
+theme-switcher {
   width: 2rem;
 
   display: grid;
@@ -17,7 +17,7 @@ button[is="theme-switcher"] {
   color: var(--ts-btn-clr, #4cc6ff);
 }
 
-button[is="theme-switcher"] svg {
+theme-switcher svg {
   width: 100%;
   height: auto;
 
@@ -28,7 +28,7 @@ button[is="theme-switcher"] svg {
   transition: all 0.2s ease-in-out;
 }
 
-button[is="theme-switcher"]:hover svg,
-button[is="theme-switcher"]:focus svg {
+theme-switcher:hover svg,
+theme-switcher:focus svg {
   stroke: var(--ts-btn-hover, #ffefc2);
 }
