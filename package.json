@@ -1,24 +1,25 @@
 {
-  "name": "theme-switcher",
+  "name": "simple-theme-switcher",
   "version": "1.0.0",
   "description": "A small web component for switching themes.",
-  "main": "theme-switcher.js",
+  "main": "simple-theme-switcher.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/craigwfox/theme-switcher.git"
+    "url": "git+https://github.com/craigwfox/simple-theme-switcher.git"
   },
   "keywords": [
     "web component",
     "theme switcher",
-    "dark mode"
+    "dark mode",
+    "simple theme switcher"
   ],
   "author": "Craig Fox",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/craigwfox/theme-switcher/issues"
+    "url": "https://github.com/craigwfox/simple-theme-switcher/issues"
   },
-  "homepage": "https://github.com/craigwfox/theme-switcher#readme"
+  "homepage": "https://github.com/craigwfox/simple-theme-switcher#readme"
 }
