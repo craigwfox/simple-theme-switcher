@@ -1,6 +1,6 @@
 # Theme switcher
 
-A small web component for switching themes. I've tried to make it fairly flexible and barebones. I've included some basic styles
+A small web component for switching themes. I've tried to make it fairly flexible and barebones. There are some minor styles included that you can manually add to your project.
 
 ## Usage
 
