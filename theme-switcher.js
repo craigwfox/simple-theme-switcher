@@ -7,7 +7,7 @@ class ThemeSwitcher extends HTMLButtonElement {
     this.ariaLabel = this.ariaLabel.bind(this);
 
     // get Attrs
-    this.classPrefix = this.getAttribute("classPrefix");
+    this.dataAttr = this.getAttribute("dataAttr");
     this.mode1 = this.getAttribute("modes")
       .split(",")
       .map((index) => index.trim())[0];
@@ -25,17 +25,16 @@ class ThemeSwitcher extends HTMLButtonElement {
     this.setAttribute("aria-label", `${state} mode`);
   }
 
+  // Swaps the theme, setting an attribute on the body and a label on the button
   swap() {
     if (this.current === this.mode1) {
       this.current = this.mode2;
       this.ariaLabel(this.mode1);
-      this.body.classList.add(`${this.classPrefix + this.mode2}`);
-      this.body.classList.remove(`${this.classPrefix + this.mode1}`);
+      this.body.setAttribute(this.dataAttr, `${this.mode2}`);
     } else {
       this.current = this.mode1;
       this.ariaLabel(this.mode2);
-      this.body.classList.add(`${this.classPrefix + this.mode1}`);
-      this.body.classList.remove(`${this.classPrefix + this.mode2}`);
+      this.body.setAttribute(this.dataAttr, `${this.mode1}`);
     }
   }
 
