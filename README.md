@@ -2,6 +2,9 @@
 
 A small web component for switching themes. I've tried to make it fairly flexible and barebones. There are some minor styles included that you can manually add to your project.
 
+- Github: [https://github.com/craigwfox/simple-theme-switcher](https://github.com/craigwfox/simple-theme-switcher)
+- NPM: [https://www.npmjs.com/package/simple-theme-switcher](https://www.npmjs.com/package/simple-theme-switcher)
+
 ## Usage
 
 ```HTML
