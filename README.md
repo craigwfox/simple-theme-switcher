@@ -18,3 +18,8 @@ A small web component for switching themes. I've tried to make it fairly flexibl
 
 <script src="./node_modules/simple-theme-switcher/simple-theme-switcher.js"></script>
 ```
+
+## Todo
+
+- LocalStorage for the prefs
+- Maybe swap to checkboxes (this needs more research on what is better)
