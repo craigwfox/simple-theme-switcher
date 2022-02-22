@@ -18,6 +18,12 @@ class ThemeSwitcher extends HTMLButtonElement {
     // Dom elements
     this.body = this.closest("body");
 
+    // checks if a default has been set on the body
+    if (this.body.getAttribute("data-theme")) {
+      this.current = this.body.getAttribute("data-theme");
+    }
+
+    // sets the click listener to fire the swap function
     this.addEventListener("click", this.swap);
   }
 
