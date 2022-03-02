@@ -7,7 +7,7 @@ class ThemeSwitcher extends HTMLButtonElement {
     this.ariaLabel = this.ariaLabel.bind(this);
 
     // get Attrs
-    this.dataAttr = 'this.getAttribute("dataAttr")';
+    this.dataAttr = this.getAttribute("dataAttr");
     this.mode1 = this.getAttribute("modes")
       .split(",")
       .map((index) => index.trim())[0];
@@ -16,11 +16,11 @@ class ThemeSwitcher extends HTMLButtonElement {
       .map((index) => index.trim())[1];
 
     // Dom elements
-    this.body = this.closest("body");
+    this.body = document.querySelector("body");
 
     // checks if a default has been set on the body
-    if (this.body.getAttribute("data-theme")) {
-      this.current = this.body.getAttribute("data-theme");
+    if (this.body.getAttribute(this.dataAttr)) {
+      this.current = this.body.getAttribute(this.dataAttr);
     }
 
     // sets the click listener to fire the swap function
