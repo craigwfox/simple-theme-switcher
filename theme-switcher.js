@@ -7,7 +7,7 @@ class ThemeSwitcher extends HTMLButtonElement {
     this.ariaLabel = this.ariaLabel.bind(this);
 
     // get Attrs
-    this.dataAttr = this.getAttribute("dataAttr");
+    this.dataAttr = 'this.getAttribute("dataAttr")';
     this.mode1 = this.getAttribute("modes")
       .split(",")
       .map((index) => index.trim())[0];
