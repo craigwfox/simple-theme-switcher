@@ -14,7 +14,7 @@ theme-switcher {
   transition: all 0.2s ease-in-out;
 
   cursor: pointer;
-  color: var(--ts-btn-clr, #4cc6ff);
+  color: hsl(var(--clr-link));
 }
 
 theme-switcher svg {
@@ -23,12 +23,12 @@ theme-switcher svg {
 
   object-fit: contain;
 
-  stroke: var(--ts-btn-clr, #4cc6ff);
+  stroke: hsl(var(--clr-link));
 
   transition: all 0.2s ease-in-out;
 }
 
 theme-switcher:hover svg,
 theme-switcher:focus svg {
-  stroke: var(--ts-btn-hover, #ffefc2);
+  stroke: hsl(var(--clr-link-hover));
 }

@@ -35,6 +35,7 @@ class ThemeSwitcher extends HTMLButtonElement {
   swap() {
     if (this.current === this.mode1) {
       this.current = this.mode2;
+      ``;
       this.ariaLabel(this.mode1);
       this.body.setAttribute(this.dataAttr, `${this.mode2}`);
     } else {
