@@ -1,6 +1,6 @@
 {
   "name": "simple-theme-switcher",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A small web component for switching themes.",
   "main": "simple-theme-switcher.js",
   "scripts": {
