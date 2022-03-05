@@ -8,12 +8,9 @@ class ThemeSwitcher extends HTMLButtonElement {
 
     // get Attrs
     this.dataAttr = this.getAttribute("dataAttr");
-    this.mode1 = this.getAttribute("modes")
+    this.modes = this.getAttribute("modes")
       .split(",")
-      .map((index) => index.trim())[0];
-    this.mode2 = this.getAttribute("modes")
-      .split(",")
-      .map((index) => index.trim())[1];
+      .map((mode) => mode.trim());
 
     // Dom elements
     this.body = document.querySelector("body");
@@ -21,6 +18,16 @@ class ThemeSwitcher extends HTMLButtonElement {
     // checks if a default has been set on the body
     if (this.body.getAttribute(this.dataAttr)) {
       this.current = this.body.getAttribute(this.dataAttr);
+    }
+
+    if (localStorage.getItem(this.dataAttr)) {
+      this.current = localStorage.getItem(this.dataAttr);
+
+      setTimeout(() => {
+        const { modeOn, modeOff } = this.checkMode();
+
+        this.setTheme(modeOn, modeOff);
+      }, 10);
     }
 
     // sets the click listener to fire the swap function
@@ -31,18 +38,27 @@ class ThemeSwitcher extends HTMLButtonElement {
     this.setAttribute("aria-label", `${state} mode`);
   }
 
+  // Checks for the current mode and returns an object of the on and off modes
+  checkMode() {
+    return {
+      modeOn: this.current === this.modes[0] ? this.modes[0] : this.modes[1],
+      modeOff: this.current != this.modes[0] ? this.modes[0] : this.modes[1],
+    };
+  }
+
+  // Sets the aria label and the body attr
+  setTheme(modeOn, modeOff) {
+    this.ariaLabel(modeOff);
+    this.body.setAttribute(this.dataAttr, modeOn);
+  }
+
   // Swaps the theme, setting an attribute on the body and a label on the button
   swap() {
-    if (this.current === this.mode1) {
-      this.current = this.mode2;
-      ``;
-      this.ariaLabel(this.mode1);
-      this.body.setAttribute(this.dataAttr, `${this.mode2}`);
-    } else {
-      this.current = this.mode1;
-      this.ariaLabel(this.mode2);
-      this.body.setAttribute(this.dataAttr, `${this.mode1}`);
-    }
+    const { modeOn, modeOff } = this.checkMode();
+
+    this.current = modeOff; // set's the current to the off mode to swap
+    this.setTheme(modeOff, modeOn);
+    localStorage.setItem(this.dataAttr, this.current); // set's the localStorage to the new current
   }
 
   static get observedAttributes() {
